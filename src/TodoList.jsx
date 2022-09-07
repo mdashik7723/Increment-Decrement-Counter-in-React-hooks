@@ -5,20 +5,29 @@ const TodoList = () => {
 
     const [num, setNum] = useState(0)
     const incNum = () => {
-        setNum(num+1)
+        setNum(num + 1)
+    };
+    const decNum = () => {
+
+        if (num > 0) {
+            setNum(num - 1);
+        } else {
+            alert('Sorry 0 is the limit')
+            setNum(0);
+        }
     }
 
-    return(
+    return (
         <>
-       <div className= 'main_div'>
-           <div className='center_div'>
-               <h1> {num} </h1>
-               <div className="btn_div">
-                   <button onClick={incNum}> Increment </button>
-                   <button> Decrement </button>
-               </div>
-           </div>
-       </div>
+            <div className='main_div'>
+                <div className='center_div'>
+                    <h1> {num} </h1>
+                    <div className="btn_div">
+                        <button onClick={incNum}> Increment</button>
+                        <button onClick={decNum}> Decrement</button>
+                    </div>
+                </div>
+            </div>
 
         </>
 
